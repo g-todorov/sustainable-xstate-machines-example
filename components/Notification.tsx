@@ -34,20 +34,3 @@ export function Notification({ actor, data }: Props) {
     </div>
   );
 }
-
-export function Notification1({ actor, data }: Props) {
-  const [state, send] = useActor(actor);
-
-  return (
-    <div>
-      {state.matches("on") && <div>Very important notification</div>}
-      <button
-        onClick={() => {
-          send({ type: "TOGGLE" });
-        }}
-      >
-        {state.matches("on") ? "close" : "open"}
-      </button>
-    </div>
-  );
-}
